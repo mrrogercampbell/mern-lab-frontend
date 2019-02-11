@@ -16,7 +16,7 @@ class App extends Component {
           </Link>
         </nav>
         <main>
-          <h1>Hello</h1>
+          <h1>Hello From App Component</h1>
           <Route path='/' exact render={(routerProps) => <Home {...routerProps} {...this.state}/>}/>
         </main>
       </div>
