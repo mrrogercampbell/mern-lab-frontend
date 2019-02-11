@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './Home.css'
 
 class Home extends Component {
     constructor() {
@@ -23,8 +24,10 @@ class Home extends Component {
         const animals = this.state.animals.map((animal, index) => {
             return (
                 <div key={index}>
-                    <p>{animal.animalName}</p>
+                <img src={animal.photoUrl} alt={animal.animalName}/>
+                    <h1>{animal.animalName}</h1>
                     <p>{animal.animalOrigin}</p>
+                    <p>{animal.animalDetails}</p>
                 </div>
             )
         })
