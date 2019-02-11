@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {Route, Link} from 'react-router-dom'
+import Home from '../Home/Home'
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
         </nav>
         <main>
           <h1>Hello</h1>
+          <Route path='/' exact render={(routerProps) => <Home {...routerProps} {...this.state}/>}/>
         </main>
       </div>
     );
