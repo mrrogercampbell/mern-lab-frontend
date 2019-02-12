@@ -54,7 +54,7 @@ class Create extends Component {
                         <br/>
                     <label>Details on this Particular:</label>
                         <br/>
-                    <input type="text" name="animalDetails" value={this.state.value} onChange={this.handleChange} />
+                    <textarea type="text" name="animalDetails" value={this.state.value} onChange={this.handleChange} />
                         <br/>
                     <input type="submit" value="Submit"/>
                 </form>

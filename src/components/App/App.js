@@ -3,6 +3,7 @@ import './App.css';
 import {Route, Link} from 'react-router-dom'
 import Home from '../Home/Home'
 import Create from '../Create/Create'
+import ShowOne from '../ShowOne/ShowOne'
 
 class App extends Component {
   render() {
@@ -18,8 +19,15 @@ class App extends Component {
         </nav>
         <main>
           <h1>Welcome to the Fun With Animals App</h1>
-          <Route path='/' exact render={(routerProps) => <Home {...routerProps} {...this.state}/>}/>
-          <Route path='/new' exact render={(routerProps) => <Create {...routerProps} {...this.state}/>}/>
+          <Route path='/' exact render={(routerProps) => 
+            <Home {...routerProps} {...this.state}/>}
+          />
+          <Route path='/new' exact render={(routerProps) => 
+            <Create {...routerProps} {...this.state}/>}
+          />
+          <Route path='/:id' render={(routerProps) => 
+            <ShowOne {...routerProps}{...this.state}/>}
+          />
         </main>
       </div>
     );
