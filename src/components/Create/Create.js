@@ -4,8 +4,8 @@ import './Create.css'
 import axios from 'axios'
 
 class Create extends Component {
-    constructor(props){
-        super(props)
+    constructor(){
+        super()
             this.state = {
                 animalName: '',
                 photoUrl: '',
@@ -16,9 +16,7 @@ class Create extends Component {
     this.handleChange = this.handleChange.bind(this)
     }
     handleChange(evt) {
-        const variable = evt.target.name
-        console.log(variable)
-        this.setState({[variable]: evt.target.value }, 
+        this.setState({[evt.target.name]: evt.target.value }, 
         () => {
             console.log(this.state)
         })

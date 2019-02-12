@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Home.css'
-import {Route, Link} from 'react-router-dom'
+// import {Route, Link} from 'react-router-dom'
 
 class Home extends Component {
     constructor() {
@@ -21,6 +21,14 @@ class Home extends Component {
         })
     }
 
+    handleDelete(e){
+        e.preventDefault()
+        axios.delete(`http://localhost:3001/ `)
+            .then((res) => {
+                console.log(res)
+
+            })
+    }
     render() {
         const animals = this.state.animals.map(item => {
             return (
@@ -30,7 +38,8 @@ class Home extends Component {
                     <h1>{item.animalName}</h1>
                     <p>{item.animalOrigin}</p>
                     <p>{item.animalDetails}</p>
-                    <button>Delete {item.animalName}</button>
+                    {/* <p>{item._id}</p> */}
+                    <button onClick={this.handleDelete}>Delete {item.animalName}</button>
                 {/* </Link> */}
                 </div>
             )

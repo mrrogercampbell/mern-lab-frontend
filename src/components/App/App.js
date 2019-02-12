@@ -3,7 +3,7 @@ import './App.css';
 import {Route, Link} from 'react-router-dom'
 import Home from '../Home/Home'
 import Create from '../Create/Create'
-import ShowOne from '../ShowOne/ShowOne'
+// import ShowOne from '../ShowOne/ShowOne'
 
 class App extends Component {
   render() {
@@ -25,9 +25,9 @@ class App extends Component {
           <Route path='/new' exact render={(routerProps) => 
             <Create {...routerProps} {...this.state}/>}
           />
-          {/* <Route path='/:name' render={(routerProps) =>  */}
-            {/* <ShowOne {...routerProps}{...this.state}/>} */}
-          {/* /> */}
+          {/* <Route path='/:name' render={(routerProps) => 
+            <ShowOne {...routerProps}{...this.state}/>}
+          />  */}
         </main>
       </div>
     );
