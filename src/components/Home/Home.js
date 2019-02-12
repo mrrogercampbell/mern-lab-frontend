@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Home.css'
+import {Route, Link} from 'react-router-dom'
 
 class Home extends Component {
     constructor() {
@@ -24,10 +25,12 @@ class Home extends Component {
         const animals = this.state.animals.map((animal, index) => {
             return (
                 <div key={index}>
-                <img src={animal.photoUrl} alt={animal.animalName}/>
+                <Link to={'/' + animal.name}>
+                    <img src={animal.photoUrl} alt={animal.animalName}/>
                     <h1>{animal.animalName}</h1>
-                    <p>{animal.animalOrigin}</p>
-                    <p>{animal.animalDetails}</p>
+                </Link>
+                    {/* <p>{animal.animalOrigin}</p> */}
+                    {/* <p>{animal.animalDetails}</p> */}
                 </div>
             )
         })
