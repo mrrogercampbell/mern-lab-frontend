@@ -22,15 +22,16 @@ class Home extends Component {
     }
 
     render() {
-        const animals = this.state.animals.map((animal, index) => {
+        const animals = this.state.animals.map(item => {
             return (
-                <div key={index}>
-                <Link to={'/' + animal.name}>
-                    <img src={animal.photoUrl} alt={animal.animalName}/>
-                    <h1>{animal.animalName}</h1>
-                </Link>
-                    {/* <p>{animal.animalOrigin}</p> */}
-                    {/* <p>{animal.animalDetails}</p> */}
+                <div key={item.animalName}>
+                {/* <Link to={'/name/' + item.animalName}> */}
+                    <img src={item.photoUrl} alt={item.animalName}/>
+                    <h1>{item.animalName}</h1>
+                    <p>{item.animalOrigin}</p>
+                    <p>{item.animalDetails}</p>
+                    <button>Delete {item.animalName}</button>
+                {/* </Link> */}
                 </div>
             )
         })

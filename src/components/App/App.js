@@ -25,9 +25,9 @@ class App extends Component {
           <Route path='/new' exact render={(routerProps) => 
             <Create {...routerProps} {...this.state}/>}
           />
-          <Route path='/:name' render={(routerProps) => 
-            <ShowOne {...routerProps}{...this.state}/>}
-          />
+          {/* <Route path='/:name' render={(routerProps) =>  */}
+            {/* <ShowOne {...routerProps}{...this.state}/>} */}
+          {/* /> */}
         </main>
       </div>
     );
