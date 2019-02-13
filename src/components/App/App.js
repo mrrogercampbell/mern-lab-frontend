@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import axios from 'axios';
 import './App.css';
 import {Route, Link} from 'react-router-dom'
 import Home from '../Home/Home'
@@ -6,6 +7,23 @@ import Create from '../Create/Create'
 import ShowOne from '../ShowOne/ShowOne'
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+        animals: []
+    }
+}
+componentDidMount(){
+    axios.get('http://localhost:3001/')
+        .then((res) => {
+            console.log(res)
+            this.setState({animals: res.data})
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+}
+
   render() {
     return (
       <div className="App">

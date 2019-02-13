@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Home.css'
-import {Route, Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 class Home extends Component {
-    constructor() {
-        super()
-        this.state = {
-            animals: []
-        }
-    }
-    componentDidMount(){
-        axios.get('http://localhost:3001/')
-            .then((res) => {
-                console.log(res)
-                this.setState({animals: res.data})
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-        console.log(this.state.animals)
-    }
+    // constructor() {
+    //     super()
+    //     this.state = {
+    //         animals: []
+    //     }
+    // }
+    // componentDidMount(){
+    //     axios.get('http://localhost:3001/')
+    //         .then((res) => {
+    //             console.log(res)
+    //             this.setState({animals: res.data})
+    //     })
+    //     .catch((err) => {
+    //         console.log(err)
+    //     })
+    //     console.log(this.state.animals)
+    // }
 
     handleDelete(e){
         e.preventDefault()
@@ -31,10 +31,10 @@ class Home extends Component {
             })
     }
     render() {
-        const animals = this.state.animals.map(item => {
+        const animals = this.props.animals.map(item => {
             return (
                 <div key={item.animalName}>
-                <Link to={'/name/' + item.animalName}>
+                <Link to={'/name/' + item._id}>
                     <img src={item.photoUrl} alt={item.animalName}/>
                     <h1>{item.animalName}</h1>
                     {/* <p>{item.animalOrigin}</p>

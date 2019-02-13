@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import './ShowOne.css'
 // import {Route, Link} from 'react-router-dom'
 
@@ -18,13 +18,17 @@ class SingleView extends Component {
     // }
     
     render() {
-        let oneAnimal = this.props.animals.find((recOfAnimal) => recOfAnimal._id === this.props.match.params.id)
+        let oneAnimal = this.props.animals.find((recOfAnimal) => recOfAnimal._id === this.props.match.params._id)
         return (
             <div>
-                {/* <h1>Hello from Single View</h1> */}
-                {oneAnimal.animalName}
+                {console.log(oneAnimal)}
+                {console.log(this.props.animals.animalName)}
+                {this.props.animals.animalName}
+                <h1>Hello from Single View</h1>
+                <h1>{this.props.animals.animalName}</h1>
             </div>
         );
+        
     }
 }
 
