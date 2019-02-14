@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './ShowOne.css'
 // import {Route, Link} from 'react-router-dom'
 
-class SingleView extends Component {
+class ShowOne extends Component {
     // constructor(){
 
     // componentDidMount(){
@@ -16,20 +16,23 @@ class SingleView extends Component {
     //         console.log(err)
     //     })
     // }
-    
+    componentWillMount(){
+        console.log('will mount. ShowOne')
+    }
+
     render() {
-        let oneAnimal = this.props.animals.find((recOfAnimal) => recOfAnimal._id === this.props.match.params._id)
+        let oneAnimal = this.props.animals.find(recOfAnimal => recOfAnimal.id === this.props.match.params._id)
+        console.log(oneAnimal)
         return (
             <div>
                 {console.log(oneAnimal)}
-                {console.log(this.props.animals.animalName)}
-                {this.props.animals.animalName}
-                <h1>Hello from Single View</h1>
-                <h1>{this.props.animals.animalName}</h1>
+                <h1>{oneAnimal.animalName}</h1>
+                <img src={oneAnimal.photoUrl} alt={oneAnimal.animalName}/>
+                <h1>{oneAnimal.animalOrigin}</h1>
+                <h1>{oneAnimal.animalDetails}</h1>
             </div>
-        );
-        
+        )
     }
 }
 
-export default SingleView;
+export default ShowOne;

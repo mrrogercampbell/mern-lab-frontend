@@ -23,6 +23,9 @@ componentDidMount(){
         console.log(err)
     })
 }
+componentWillUnmount(){
+  console.log('App component will unmount')
+}
 
   render() {
     return (
@@ -37,15 +40,15 @@ componentDidMount(){
         </nav>
         <main>
           <h1>Welcome to the Fun With Animals App</h1>
-          <Route path='/' exact render={(routerProps) => 
-            <Home {...routerProps} {...this.state}/>}
-          />
           <Route path='/new' exact render={(routerProps) => 
             <Create {...routerProps} {...this.state}/>}
           />
-          <Route path='/:id' render={(routerProps) => 
+          <Route path='/:id' exact render={(routerProps) => 
             <ShowOne {...routerProps}{...this.state}/>}
           /> 
+            <Route path='/' exact render={(routerProps) => 
+              <Home {...routerProps} {...this.state}/>}
+            />
         </main>
       </div>
     );
